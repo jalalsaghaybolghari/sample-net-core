@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagment.Api", "src\ProjectManagment.Api\ProjectManagment.Api.csproj", "{3EC41F0A-8055-4775-B22B-EF9DA39DC820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagment.Business", "ProjectManagment.Business\ProjectManagment.Business.csproj", "{25D81AEB-939F-4887-8EF4-AAC3E56694C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagment.Business", "src\ProjectManagment.Business\ProjectManagment.Business.csproj", "{25D81AEB-939F-4887-8EF4-AAC3E56694C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagment.Domain", "ProjectManagment.Domain\ProjectManagment.Domain.csproj", "{F50A4BE7-112F-42C6-9BE6-4B1DB82D4DA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagment.Domain", "src\ProjectManagment.Domain\ProjectManagment.Domain.csproj", "{F50A4BE7-112F-42C6-9BE6-4B1DB82D4DA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
