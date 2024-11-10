@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjectManagment.Business\ProjectManagment.Business.csproj" />
     <ProjectReference Include="..\ProjectManagment.Domain\ProjectManagment.Domain.csproj" />
   </ItemGroup>
 
