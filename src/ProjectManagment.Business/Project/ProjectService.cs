@@ -30,4 +30,12 @@ public class ProjectService: IProjectService
         return projectDtoList;
     }
 
+    public async Task AddAsync(ProjectDto projectDto, CancellationToken cancellationToken)
+    {
+        var projectMaped = Mapper<Domain.Entities.Project, ProjectDto>.MappClasses(projectDto);
+        projectMaped.CreatedDate = DateTime.UtcNow;
+        await _projectDbContext.projects.AddAsync(projectMaped, cancellationToken);
+        await _projectDbContext.SaveChangesAsync(cancellationToken);
+
+    }
 }

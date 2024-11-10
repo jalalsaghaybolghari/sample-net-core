@@ -5,4 +5,5 @@ namespace ProjectManagment.Business.Project;
 public interface IProjectService
 {
     Task<List<ProjectDto>> GetAllAsync(CancellationToken cancellationToken);
+    Task AddAsync(ProjectDto projectDto, CancellationToken cancellationToken);
 }
