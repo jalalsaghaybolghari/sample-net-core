@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjectManagment.Business.Dtos;
 using ProjectManagment.Business.Project;
 
@@ -21,6 +20,14 @@ namespace ProjectManagment.Api.Controllers
         {
             return Ok(await _projectService.GetAllAsync(cancellationToken));
         }
+        [HttpPost]
+        public async Task<IActionResult> AddProject(ProjectDto projectDto , CancellationToken cancellationToken)
+        {
+            await _projectService.AddAsync(projectDto, cancellationToken);
+
+            return Ok();
+        }
+
 
     }
 }
