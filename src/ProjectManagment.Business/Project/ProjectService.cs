@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectManagment.Business.Dtos;
+using ProjectManagment.Business.Exceptions;
 using ProjectManagment.Business.Mapper;
 using ProjectManagment.Domain.DbContext;
 
@@ -30,6 +31,25 @@ public class ProjectService: IProjectService
         return projectDtoList;
     }
 
+    /// <summary>
+    /// return project 
+    /// </summary>
+    /// <returns></returns>
+    public async Task<ProjectDto> GetByIdAsync(int id, CancellationToken cancellationToken)
+    {
+        var project = await _projectDbContext.projects.SingleOrDefaultAsync(x => x.Id == id , cancellationToken);
+        if (project == null)
+            throw new NotFoundException("Project Not found");
+
+        var mappedProject = Mapper<ProjectDto, Domain.Entities.Project>.MappClasses(project);
+        return mappedProject;
+
+    }
+
+    /// <summary>
+    /// add new project
+    /// </summary>
+    /// <returns></returns>
     public async Task AddAsync(ProjectDto projectDto, CancellationToken cancellationToken)
     {
         var projectMaped = Mapper<Domain.Entities.Project, ProjectDto>.MappClasses(projectDto);
